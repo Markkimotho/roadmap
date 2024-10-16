@@ -1,9 +1,3 @@
-<style>
-    .mermaid {
-        font-size: 14px; /* Adjust the font size here */
-    }
-</style>
-
 ```mermaid
 gantt
     title Project Milestones for Redis Clone, Load Balancer, and Rate Limiter
@@ -88,6 +82,7 @@ gantt
     Testing and Error Handling                                 :        rl5, 2024-11-19, 2024-12-02
     ├── Create test cases for rate limiter                    :        rl5a, 2024-11-19, 2024-11-24
     └── Implement error handling                                :        rl5b, 2024-11-25, 2024-12-02
+
 ```
 
 
