@@ -1,104 +1,210 @@
 ```mermaid
-%%{ init : { "theme" : "default", "gantt" : { "barHeight" : 20, "gridLineStartTime" : "2024-10-01", "gridLineEndTime" : "2025-01-31" }}}%%
-gantt
-    title Comprehensive Project Timeline
-    dateFormat  YYYY-MM-DD
+%%{ init: { "theme": "default" } }%%
+mindmap
+  root
+    Redis Server
+      Set up environment and install Redis
+      Serialization and Deserialization of RESP
+      Build basic Redis server
+      Implement Key-Value Storage
+      Handle multiple clients
+      Add command extensions
+      Advanced Commands
+      Performance Testing
+      
+    Load Balancer
+      High-Level Design and Requirements
+      Implement basic load balancer logic
+      Health Checking and Failover
+      Advanced Routing Algorithms
+      Testing and Optimization
 
-    section Redis Server Clone
-    Set up environment and install Redis                     :a1, 2024-10-01, 7d
-    ├── Choose tech stack                                   :a1a, 2024-10-01, 2d
-    ├── Install Redis and dependencies                      :a1b, 2024-10-03, 3d
-    └── Familiarize with RESP protocol                      :a1c, 2024-10-06, 2d
-
-    Serialization & Deserialization of RESP                  :a2, 2024-10-08, 14d
-    ├── Study RESP protocol specification                     :a2a, 2024-10-08, 3d
-    ├── Implement serialization logic                         :a2b, 2024-10-11, 5d
-    └── Implement deserialization logic                       :a2c, 2024-10-16, 6d
-
-    Build basic Redis server                                   :a3, 2024-10-22, 21d
-    ├── Setup server to listen on port 6379                   :a3a, 2024-10-22, 5d
-    ├── Implement basic commands (PING, ECHO)                :a3b, 2024-10-27, 7d
-    └── Test basic functionality                              :a3c, 2024-11-03, 9d
-
-    Implement Key-Value Storage (SET/GET)                     :a4, 2024-11-12, 14d
-    ├── Implement SET command                                 :a4a, 2024-11-12, 6d
-    └── Implement GET command                                 :a4b, 2024-11-18, 6d
-
-    Handle multiple clients (Concurrency)                     :a5, 2024-11-26, 14d
-    ├── Choose concurrency model (Threads vs. Async)         :a5a, 2024-11-26, 3d
-    └── Implement concurrency handling                         :a5b, 2024-11-29, 11d
-
-    Add command extensions (EX, PX)                           :a6, 2024-12-10, 14d
-    ├── Implement expiry options                               :a6a, 2024-12-10, 6d
-    └── Test extended commands                                 :a6b, 2024-12-17, 8d
-
-    Advanced Commands (EXISTS, DEL, LPUSH)                    :a7, 2024-12-24, 21d
-    ├── Implement EXISTS command                               :a7a, 2024-12-24, 7d
-    ├── Implement DEL command                                  :a7b, 2025-01-02, 6d
-    └── Implement LPUSH command                                :a7c, 2025-01-08, 7d
-
-    Performance Testing & Benchmarking                        :a8, 2025-01-15, 14d
-    ├── Create test cases for performance                     :a8a, 2025-01-15, 5d
-    └── Run benchmarks and analyze results                     :a8b, 2025-01-21, 9d
-
-    section Load Balancer
-    High-Level Design and Requirements                         :b1, 2024-10-01, 14d
-    ├── Gather requirements                                    :b1a, 2024-10-01, 3d
-    └── Create design document                                 :b1b, 2024-10-04, 10d
-
-    Implement basic load balancer logic                        :b2, 2024-10-15, 14d
-    ├── Develop round-robin logic                             :b2a, 2024-10-15, 7d
-    └── Implement weighted load balancing                       :b2b, 2024-10-22, 7d
-
-    Implement Health Checking and Failover                     :b3, 2024-10-29, 14d
-    ├── Develop health check mechanism                         :b3a, 2024-10-29, 6d
-    └── Implement failover strategies                          :b3b, 2024-11-05, 8d
-
-    Advanced Routing Algorithms                                 :b4, 2024-11-12, 14d
-    ├── Implement least-connections routing                    :b4a, 2024-11-12, 7d
-    └── Implement IP hash routing                               :b4b, 2024-11-19, 7d
-
-    Testing and Optimization                                   :b5, 2024-11-26, 14d
-    ├── Conduct unit tests                                     :b5a, 2024-11-26, 7d
-    └── Optimize performance                                    :b5b, 2024-12-03, 7d
-
-    section Rate Limiter
-    Define Rate Limiting Logic (HLD)                           :c1, 2024-10-01, 7d
-    ├── Research rate limiting strategies                      :c1a, 2024-10-01, 3d
-    └── Document rate limiting approach                        :c1b, 2024-10-04, 4d
-
-    Token Bucket or Leaky Bucket Algorithm                     :c2, 2024-10-08, 14d
-    ├── Implement token bucket algorithm                       :c2a, 2024-10-08, 7d
-    └── Implement leaky bucket algorithm                       :c2b, 2024-10-15, 7d
-
-    Integrate Redis as Shared Database                         :c3, 2024-10-22, 14d
-    ├── Establish Redis connection                             :c3a, 2024-10-22, 7d
-    └── Implement data storage logic                           :c3b, 2024-10-29, 7d
-
-    Add Customization Features                                 :c4, 2024-11-05, 14d
-    ├── Define customizable rate limits                        :c4a, 2024-11-05, 7d
-    └── Implement customization features                       :c4b, 2024-11-12, 7d
-
-    Testing and Error Handling                                 :c5, 2024-11-19, 14d
-    ├── Create test cases for rate limiter                    :c5a, 2024-11-19, 7d
-    └── Implement error handling                                :c5b, 2024-11-26, 7d
-
-    section Deployment
-    Prepare Deployment Environment                              :d1, 2025-01-01, 7d
-    ├── Set up cloud infrastructure                             :d1a, 2025-01-01, 4d
-    └── Configure network and security settings                :d1b, 2025-01-05, 3d
-
-    Deploy Application                                          :d2, 2025-01-08, 7d
-    ├── Deploy Redis Server Clone                               :d2a, 2025-01-08, 3d
-    └── Deploy Load Balancer and Rate Limiter                 :d2b, 2025-01-11, 4d
-
-    Post-deployment Monitoring                                  :d3, 2025-01-15, 14d
-    ├── Monitor performance and stability                       :d3a, 2025-01-15, 7d
-    └── Implement logging and alerting systems                 :d3b, 2025-01-22, 7d
-
-
+    Rate Limiter
+      Define Rate Limiting Logic
+      Token Bucket or Leaky Bucket Algorithm
+      Integrate Redis
+      Add Customization Features
+      Testing and Error Handling
 ```
 
+```plantuml
+@startuml Project_Roadmap_Detailed
+
+title Detailed Project Roadmap with Timelines
+
+!define RECTANGLE class
+
+rectangle "Redis Server" as redis {
+    RECTANGLE "Set up environment\nand install Redis\n(Oct 17 - Oct 24, 2024)\n(Week 1)" as redis1
+    note right of redis1
+      - Install Redis on the development server.
+      - Configure Redis settings (memory limits, persistence).
+      - Test basic Redis functionality with sample data.
+      - Create a README for setup instructions.
+    end note
+
+    RECTANGLE "Serialization and\nDeserialization of RESP\n(Oct 25 - Nov 7, 2024)\n(Weeks 2-3)" as redis2
+    note right of redis2
+      - Research RESP (REdis Serialization Protocol) format.
+      - Handle different data types (strings, integers, arrays).
+      - Implement serialization and deserialization methods.
+      - Conduct unit tests to validate correctness of RESP parsing.
+    end note
+
+    RECTANGLE "Build basic Redis server\n(Nov 8 - Nov 21, 2024)\n(Weeks 4-5)" as redis3
+    note right of redis3
+      - Create core Redis server logic for handling client connections.
+      - Implement basic commands (GET, SET) with appropriate responses.
+      - Ensure data persistence using RDB (Redis Database) snapshots.
+      - Write unit tests for the core server functionality.
+    end note
+
+    RECTANGLE "Implement Key-Value Storage\n(Nov 22 - Nov 28, 2024)\n(Week 6)" as redis4
+    note right of redis4
+      - Design data structures for efficient in-memory storage (e.g., hash maps).
+      - Handle storage limits and implement eviction policies (LRU, LFU).
+      - Implement storage statistics tracking (memory usage, hit ratio).
+      - Write tests for key-value storage operations.
+    end note
+
+    RECTANGLE "Handle multiple clients\n(Nov 29 - Dec 5, 2024)\n(Week 7)" as redis5
+    note right of redis5
+      - Implement client connection handling using threads or async IO.
+      - Ensure thread safety and manage concurrent access to shared resources.
+      - Test concurrent client connections and measure performance.
+      - Create a monitoring tool to visualize active connections.
+    end note
+
+    RECTANGLE "Add command extensions\n(Dec 6 - Dec 19, 2024)\n(Weeks 8-9)" as redis6
+    note right of redis6
+      - Support for additional commands (EXPIRE, DEL).
+      - Document command usage and performance considerations.
+      - Implement command validation and error handling.
+      - Write integration tests for new commands.
+    end note
+
+    RECTANGLE "Advanced Commands\n(Dec 20 - Dec 26, 2024)\n(Week 10)" as redis7
+    note right of redis7
+      - Implement sorting and transactions (MULTI/EXEC).
+      - Add support for Lua scripting for custom commands.
+      - Write performance benchmarks for advanced commands.
+      - Test advanced commands under heavy load.
+    end note
+
+    RECTANGLE "Performance Testing\n(Dec 27, 2024 - Jan 2, 2025)\n(Week 11)" as redis8
+    note right of redis8
+      - Benchmark performance under simulated load conditions.
+      - Optimize server settings based on benchmarking results.
+      - Identify and fix performance bottlenecks.
+      - Create detailed performance reports for review.
+    end note
+}
+
+rectangle "Load Balancer" as load_balancer {
+    RECTANGLE "High-Level Design\nand Requirements\n(Oct 25 - Nov 7, 2024)\n(Weeks 2-3)" as lb1
+    note right of lb1
+      - Define architecture of the load balancer with diagrams.
+      - Identify key requirements (routing, failover, logging).
+      - Create design documentation and review with stakeholders.
+      - Finalize component specifications and interfaces.
+    end note
+
+    RECTANGLE "Implement basic\nload balancer logic\n(Nov 8 - Nov 21, 2024)\n(Weeks 4-5)" as lb2
+    note right of lb2
+      - Develop initial load balancing algorithms (round-robin, least connections).
+      - Implement request forwarding to multiple backend servers.
+      - Set up logging for request handling and performance monitoring.
+      - Conduct unit tests on load balancing logic.
+    end note
+
+    RECTANGLE "Health Checking and\nFailover\n(Nov 22 - Nov 28, 2024)\n(Week 6)" as lb3
+    note right of lb3
+      - Implement health check mechanisms to monitor server status.
+      - Ensure failover to backup servers during downtime.
+      - Test health checking and failover under simulated failures.
+      - Document recovery procedures and monitoring alerts.
+    end note
+
+    RECTANGLE "Advanced Routing\nAlgorithms\n(Dec 1 - Dec 14, 2024)\n(Weeks 7-8)" as lb4
+    note right of lb4
+      - Implement IP hashing and session persistence strategies.
+      - Develop custom routing strategies based on request types.
+      - Benchmark routing performance under varying loads.
+      - Write documentation for routing algorithms.
+    end note
+
+    RECTANGLE "Testing and Optimization\n(Dec 15 - Dec 31, 2024)\n(Weeks 9-11)" as lb5
+    note right of lb5
+      - Perform load testing with various traffic patterns.
+      - Profile the load balancer’s performance and identify bottlenecks.
+      - Optimize algorithm performance for better throughput.
+      - Review and refine design based on testing results.
+    end note
+}
+
+rectangle "Rate Limiter" as rate_limiter {
+    RECTANGLE "Define Rate Limiting Logic\n(Oct 25 - Nov 1, 2024)\n(Week 2)" as rl1
+    note right of rl1
+      - Research different rate limiting strategies and use cases.
+      - Choose between Token Bucket and Leaky Bucket algorithms.
+      - Define policies for rate limiting (e.g., IP-based, endpoint-based).
+      - Create architectural diagrams for rate limiting components.
+    end note
+
+    RECTANGLE "Token Bucket or\nLeaky Bucket Algorithm\n(Nov 2 - Nov 15, 2024)\n(Weeks 3-4)" as rl2
+    note right of rl2
+      - Implement chosen algorithm with clear thresholds.
+      - Ensure scalability and performance of the implementation.
+      - Create test cases to validate rate limiting functionality.
+      - Conduct stress tests to evaluate rate limiting under load.
+    end note
+
+    RECTANGLE "Integrate Redis\n(Nov 16 - Nov 29, 2024)\n(Weeks 5-6)" as rl3
+    note right of rl3
+      - Store rate limits and user sessions in Redis.
+      - Handle synchronization issues for distributed environments.
+      - Implement Redis-based counters to track request limits.
+      - Test Redis integration in different environments.
+    end note
+
+    RECTANGLE "Add Customization Features\n(Nov 30 - Dec 13, 2024)\n(Weeks 7-8)" as rl4
+    note right of rl4
+      - Allow user-defined rate limits with configurable options.
+      - Support for different user tiers and access levels.
+      - Implement additional configuration options for flexibility.
+      - Validate customization through end-to-end testing.
+    end note
+
+    RECTANGLE "Testing and Error Handling\n(Dec 14 - Dec 21, 2024)\n(Week 9)" as rl5
+    note right of rl5
+      - Perform end-to-end testing of the rate limiter under various scenarios.
+      - Simulate burst requests and validate throttling mechanisms.
+      - Implement robust error handling and logging.
+      - Create monitoring tools to visualize rate limiting performance.
+    end note
+}
+
+' Connecting milestones within each project
+redis1 --> redis2 : "Finish by Nov 7, 2024"
+redis2 --> redis3 : "Finish by Nov 21, 2024"
+redis3 --> redis4 : "Finish by Nov 28, 2024"
+redis4 --> redis5 : "Finish by Dec 5, 2024"
+redis5 --> redis6 : "Finish by Dec 19, 2024"
+redis6 --> redis7 : "Finish by Dec 26, 2024"
+redis7 --> redis8 : "Finish by Jan 2, 2025"
+
+lb1 --> lb2 : "Start concurrently with Redis"
+lb2 --> lb3 : "Finish by Nov 28, 2024"
+lb3 --> lb4 : "Finish by Dec 14, 2024"
+lb4 --> lb5 : "Finish by Dec 31, 2024"
+
+rl1 --> rl2 : "Start concurrently with Redis"
+rl2 --> rl3 : "Finish by Nov 29, 2024"
+rl3 --> rl4 : "Finish by Dec 13, 2024"
+rl4 --> rl5 : "Finish by Dec 21, 2024"
+
+@enduml
+```
 
 # Project Descriptions
 
