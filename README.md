@@ -1,87 +1,101 @@
 ```mermaid
+%%{ init : { "theme" : "default", "gantt" : { "barHeight" : 20, "gridLineStartTime" : "2024-10-01", "gridLineEndTime" : "2025-01-31" }}}%%
 gantt
-    title Project Milestones for Redis Clone, Load Balancer, and Rate Limiter
+    title Comprehensive Project Timeline
     dateFormat  YYYY-MM-DD
-    excludes    weekends
-    
+
     section Redis Server Clone
-    Set up environment and install Redis                     :done,   m1, 2024-10-01, 2024-10-07
-    ├── Choose tech stack                                   :done,   m1a, 2024-10-01, 2024-10-02
-    ├── Install Redis and dependencies                      :done,   m1b, 2024-10-03, 2024-10-05
-    └── Setup project structure                             :done,   m1c, 2024-10-06, 2024-10-07
+    Set up environment and install Redis                     :a1, 2024-10-01, 7d
+    ├── Choose tech stack                                   :a1a, 2024-10-01, 2d
+    ├── Install Redis and dependencies                      :a1b, 2024-10-03, 3d
+    └── Familiarize with RESP protocol                      :a1c, 2024-10-06, 2d
 
-    Serialization & Deserialization of RESP                  :active, m2, 2024-10-08, 2024-10-21
-    ├── Study RESP protocol specification                     :        m2a, 2024-10-08, 2024-10-10
-    ├── Implement serialization logic                         :        m2b, 2024-10-11, 2024-10-15
-    └── Implement deserialization logic                       :        m2c, 2024-10-16, 2024-10-21
+    Serialization & Deserialization of RESP                  :a2, 2024-10-08, 14d
+    ├── Study RESP protocol specification                     :a2a, 2024-10-08, 3d
+    ├── Implement serialization logic                         :a2b, 2024-10-11, 5d
+    └── Implement deserialization logic                       :a2c, 2024-10-16, 6d
 
-    Build basic Redis server                                   :        m3, 2024-10-22, 2024-11-11
-    ├── Setup server to listen on port 6379                   :        m3a, 2024-10-22, 2024-10-26
-    ├── Implement basic commands (PING, ECHO)                :        m3b, 2024-10-27, 2024-11-02
-    └── Test basic functionality                              :        m3c, 2024-11-03, 2024-11-11
+    Build basic Redis server                                   :a3, 2024-10-22, 21d
+    ├── Setup server to listen on port 6379                   :a3a, 2024-10-22, 5d
+    ├── Implement basic commands (PING, ECHO)                :a3b, 2024-10-27, 7d
+    └── Test basic functionality                              :a3c, 2024-11-03, 9d
 
-    Implement Key-Value Storage (SET/GET)                     :        m4, 2024-11-12, 2024-11-25
-    ├── Implement SET command                                 :        m4a, 2024-11-12, 2024-11-18
-    └── Implement GET command                                 :        m4b, 2024-11-19, 2024-11-25
+    Implement Key-Value Storage (SET/GET)                     :a4, 2024-11-12, 14d
+    ├── Implement SET command                                 :a4a, 2024-11-12, 6d
+    └── Implement GET command                                 :a4b, 2024-11-18, 6d
 
-    Handle multiple clients (Concurrency)                     :        m5, 2024-11-26, 2024-12-09
-    ├── Choose concurrency model (Threads vs. Async)         :        m5a, 2024-11-26, 2024-11-28
-    └── Implement concurrency handling                         :        m5b, 2024-11-29, 2024-12-09
+    Handle multiple clients (Concurrency)                     :a5, 2024-11-26, 14d
+    ├── Choose concurrency model (Threads vs. Async)         :a5a, 2024-11-26, 3d
+    └── Implement concurrency handling                         :a5b, 2024-11-29, 11d
 
-    Add command extensions (EX, PX)                           :        m6, 2024-12-10, 2024-12-23
-    ├── Implement expiry options                               :        m6a, 2024-12-10, 2024-12-16
-    └── Test extended commands                                 :        m6b, 2024-12-17, 2024-12-23
+    Add command extensions (EX, PX)                           :a6, 2024-12-10, 14d
+    ├── Implement expiry options                               :a6a, 2024-12-10, 6d
+    └── Test extended commands                                 :a6b, 2024-12-17, 8d
 
-    Advanced Commands (EXISTS, DEL, LPUSH)                    :        m7, 2024-12-24, 2025-01-14
-    ├── Implement EXISTS command                               :        m7a, 2024-12-24, 2025-01-01
-    ├── Implement DEL command                                  :        m7b, 2025-01-02, 2025-01-07
-    └── Implement LPUSH command                                :        m7c, 2025-01-08, 2025-01-14
+    Advanced Commands (EXISTS, DEL, LPUSH)                    :a7, 2024-12-24, 21d
+    ├── Implement EXISTS command                               :a7a, 2024-12-24, 7d
+    ├── Implement DEL command                                  :a7b, 2025-01-02, 6d
+    └── Implement LPUSH command                                :a7c, 2025-01-08, 7d
 
-    Performance Testing & Benchmarking                        :        m8, 2025-01-15, 2025-01-28
-    ├── Create test cases for performance                     :        m8a, 2025-01-15, 2025-01-20
-    └── Run benchmarks and analyze results                     :        m8b, 2025-01-21, 2025-01-28
+    Performance Testing & Benchmarking                        :a8, 2025-01-15, 14d
+    ├── Create test cases for performance                     :a8a, 2025-01-15, 5d
+    └── Run benchmarks and analyze results                     :a8b, 2025-01-21, 9d
 
     section Load Balancer
-    High-Level Design and Requirements                         :done,   lb1, 2024-10-01, 2024-10-14
-    ├── Gather requirements                                    :done,   lb1a, 2024-10-01, 2024-10-03
-    └── Create design document                                 :done,   lb1b, 2024-10-04, 2024-10-14
+    High-Level Design and Requirements                         :b1, 2024-10-01, 14d
+    ├── Gather requirements                                    :b1a, 2024-10-01, 3d
+    └── Create design document                                 :b1b, 2024-10-04, 10d
 
-    Implement basic load balancer logic                        :        lb2, 2024-10-15, 2024-10-28
-    ├── Develop round-robin logic                             :        lb2a, 2024-10-15, 2024-10-21
-    └── Implement weighted load balancing                       :        lb2b, 2024-10-22, 2024-10-28
+    Implement basic load balancer logic                        :b2, 2024-10-15, 14d
+    ├── Develop round-robin logic                             :b2a, 2024-10-15, 7d
+    └── Implement weighted load balancing                       :b2b, 2024-10-22, 7d
 
-    Implement Health Checking and Failover                     :        lb3, 2024-10-29, 2024-11-11
-    ├── Develop health check mechanism                         :        lb3a, 2024-10-29, 2024-11-04
-    └── Implement failover strategies                          :        lb3b, 2024-11-05, 2024-11-11
+    Implement Health Checking and Failover                     :b3, 2024-10-29, 14d
+    ├── Develop health check mechanism                         :b3a, 2024-10-29, 6d
+    └── Implement failover strategies                          :b3b, 2024-11-05, 8d
 
-    Advanced Routing Algorithms                                 :        lb4, 2024-11-12, 2024-11-25
-    ├── Implement least-connections routing                    :        lb4a, 2024-11-12, 2024-11-18
-    └── Implement IP hash routing                               :        lb4b, 2024-11-19, 2024-11-25
+    Advanced Routing Algorithms                                 :b4, 2024-11-12, 14d
+    ├── Implement least-connections routing                    :b4a, 2024-11-12, 7d
+    └── Implement IP hash routing                               :b4b, 2024-11-19, 7d
 
-    Testing and Optimization                                   :        lb5, 2024-11-26, 2024-12-09
-    ├── Conduct unit tests                                     :        lb5a, 2024-11-26, 2024-12-02
-    └── Optimize performance                                    :        lb5b, 2024-12-03, 2024-12-09
+    Testing and Optimization                                   :b5, 2024-11-26, 14d
+    ├── Conduct unit tests                                     :b5a, 2024-11-26, 7d
+    └── Optimize performance                                    :b5b, 2024-12-03, 7d
 
     section Rate Limiter
-    Define Rate Limiting Logic (HLD)                           :done,   rl1, 2024-10-01, 2024-10-07
-    ├── Research rate limiting strategies                      :done,   rl1a, 2024-10-01, 2024-10-03
-    └── Document rate limiting approach                        :done,   rl1b, 2024-10-04, 2024-10-07
+    Define Rate Limiting Logic (HLD)                           :c1, 2024-10-01, 7d
+    ├── Research rate limiting strategies                      :c1a, 2024-10-01, 3d
+    └── Document rate limiting approach                        :c1b, 2024-10-04, 4d
 
-    Token Bucket or Leaky Bucket Algorithm                     :        rl2, 2024-10-08, 2024-10-21
-    ├── Implement token bucket algorithm                       :        rl2a, 2024-10-08, 2024-10-15
-    └── Implement leaky bucket algorithm                       :        rl2b, 2024-10-16, 2024-10-21
+    Token Bucket or Leaky Bucket Algorithm                     :c2, 2024-10-08, 14d
+    ├── Implement token bucket algorithm                       :c2a, 2024-10-08, 7d
+    └── Implement leaky bucket algorithm                       :c2b, 2024-10-15, 7d
 
-    Integrate Redis as Shared Database                         :        rl3, 2024-10-22, 2024-11-04
-    ├── Establish Redis connection                             :        rl3a, 2024-10-22, 2024-10-28
-    └── Implement data storage logic                           :        rl3b, 2024-10-29, 2024-11-04
+    Integrate Redis as Shared Database                         :c3, 2024-10-22, 14d
+    ├── Establish Redis connection                             :c3a, 2024-10-22, 7d
+    └── Implement data storage logic                           :c3b, 2024-10-29, 7d
 
-    Add Customization Features                                 :        rl4, 2024-11-05, 2024-11-18
-    ├── Define customizable rate limits                        :        rl4a, 2024-11-05, 2024-11-10
-    └── Implement customization features                       :        rl4b, 2024-11-11, 2024-11-18
+    Add Customization Features                                 :c4, 2024-11-05, 14d
+    ├── Define customizable rate limits                        :c4a, 2024-11-05, 7d
+    └── Implement customization features                       :c4b, 2024-11-12, 7d
 
-    Testing and Error Handling                                 :        rl5, 2024-11-19, 2024-12-02
-    ├── Create test cases for rate limiter                    :        rl5a, 2024-11-19, 2024-11-24
-    └── Implement error handling                                :        rl5b, 2024-11-25, 2024-12-02
+    Testing and Error Handling                                 :c5, 2024-11-19, 14d
+    ├── Create test cases for rate limiter                    :c5a, 2024-11-19, 7d
+    └── Implement error handling                                :c5b, 2024-11-26, 7d
+
+    section Deployment
+    Prepare Deployment Environment                              :d1, 2025-01-01, 7d
+    ├── Set up cloud infrastructure                             :d1a, 2025-01-01, 4d
+    └── Configure network and security settings                :d1b, 2025-01-05, 3d
+
+    Deploy Application                                          :d2, 2025-01-08, 7d
+    ├── Deploy Redis Server Clone                               :d2a, 2025-01-08, 3d
+    └── Deploy Load Balancer and Rate Limiter                 :d2b, 2025-01-11, 4d
+
+    Post-deployment Monitoring                                  :d3, 2025-01-15, 14d
+    ├── Monitor performance and stability                       :d3a, 2025-01-15, 7d
+    └── Implement logging and alerting systems                 :d3b, 2025-01-22, 7d
+
 
 ```
 
